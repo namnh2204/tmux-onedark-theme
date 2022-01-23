@@ -72,17 +72,11 @@ set "display-panes-colour" "$onedark_blue"
 set "status-bg" "$onedark_black"
 set "status-fg" "$onedark_white"
 
-set "@prefix_highlight_fg" "$onedark_black"
-set "@prefix_highlight_bg" "$onedark_green"
-set "@prefix_highlight_copy_mode_attr" "fg=$onedark_black,bg=$onedark_green"
-set "@prefix_highlight_output_prefix" "  "
-
 status_widgets_x=$(get "@onedark_widgets_x")
 status_widgets_y=$(get "@onedark_widgets_y")
 status_widgets_z=$(get "@onedark_widgets_z")
 
 set "status-right" "#[fg=$onedark_white,bg=$onedark_black,nounderscore,noitalics]${status_widgets_x} #[fg=$onedark_visual_grey,bg=$onedark_black]#[fg=$onedark_visual_grey,bg=$onedark_visual_grey]#[fg=$onedark_white, bg=$onedark_visual_grey]${status_widgets_y} #[fg=$onedark_green,bg=$onedark_visual_grey,nobold,nounderscore,noitalics]#[fg=$onedark_black,bg=$onedark_green,bold] ${status_widgets_z} #[fg=$onedark_yellow, bg=$onedark_green]#[fg=$onedark_red,bg=$onedark_yellow]"
-set "status-left" "#[fg=$onedark_black,bg=$onedark_green,bold] #S #{prefix_highlight}#[fg=$onedark_green,bg=$onedark_black,nobold,nounderscore,noitalics]"
-
+set "status-left" "#[fg=$onedark_black,bg=$onedark_green,bold]#{?client_prefix,#[bg=${onedark_red}],} #S #[fg=$onedark_green,bg=$onedark_black,nobold,nounderscore,noitalics]#{?client_prefix,#[fg=${onedark_red}],}" 
 set "window-status-format" "#[fg=$onedark_black,bg=$onedark_black,nobold,nounderscore,noitalics]#[fg=$onedark_white,bg=$onedark_black] #I  #W #[fg=$onedark_black,bg=$onedark_black,nobold,nounderscore,noitalics]"
 set "window-status-current-format" "#[fg=$onedark_black,bg=$onedark_visual_grey,nobold,nounderscore,noitalics]#[fg=$onedark_white,bg=$onedark_visual_grey,nobold] #I  #W #[fg=$onedark_visual_grey,bg=$onedark_black,nobold,nounderscore,noitalics]"
